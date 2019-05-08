@@ -11,6 +11,7 @@ void Vectors::Vec2::rotate(float theta) {
 	float Y = this->x * sin(-theta) + this->y * cos(-theta);
 	this->x = X; this->y = Y;
 }
+float Vectors::Vec2::getAngle(Vectors::Vec2 &_r) { return acos(this->dotProduct(_r) / sqrt(this->squaredMag() * _r.squaredMag())); }
 float Vectors::Vec2::mag() { return sqrt(this->x * this->x + this->y * this->y); }
 float Vectors::Vec2::squaredMag() { return this->x * this->x + this->y * this->y; }
 float Vectors::Vec2::dotProduct(Vectors::Vec2& _r) { return this->x * _r.x + this->y * _r.y; }
@@ -19,5 +20,6 @@ Vectors::Vec2 Vectors::Vec2::operator+(const Vectors::Vec2& _r) { Vectors::Vec2 
 Vectors::Vec2& Vectors::Vec2::operator+=(const Vectors::Vec2& _r) { this->x += _r.x; this->y += _r.y; return *this; }
 Vectors::Vec2 Vectors::Vec2::operator-(const Vectors::Vec2& _r) { Vectors::Vec2 vec; vec.x = this->x - _r.x; vec.y = this->y - _r.y; return vec; }
 Vectors::Vec2& Vectors::Vec2::operator-=(const Vectors::Vec2& _r) { this->x -= _r.x; this->y -= _r.y; return *this; }
+Vectors::Vec2 Vectors::Vec2::operator*(const float&f) { Vectors::Vec2 vec; vec.x = this->x * f; vec.y = this->y * f; return vec; }
 Vectors::Vec2 Vectors::Vec2::operator==(const Vectors::Vec2& _r) { return this->x == _r.x && this->y == _r.y; }
 Vectors::Vec2 Vectors::Vec2::operator!=(const Vectors::Vec2& _r) { return this->x != _r.x || this->y != _r.y; }
