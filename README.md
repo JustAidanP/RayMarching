@@ -1,2 +1,2 @@
 # RayMarching
-A C++ Ray Marching Algorithm
+A C++ Ray Marching Demo
