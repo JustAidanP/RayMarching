@@ -21,6 +21,8 @@ namespace Vectors {
 		//------Procedures/Functions------
 		//Rotates the vector
 		void rotate(float theta);
+		//Gets the angle between this vector and another
+		float getAngle(Vec2 &_r);
 		//Finds the magnitude of the vector
 		float mag();
 		//Finds the squared magnitude of the vector
@@ -33,6 +35,7 @@ namespace Vectors {
 		Vec2& operator+=(const Vec2& _r);
 		Vec2 operator-(const Vec2& _r);
 		Vec2& operator-=(const Vec2& _r);
+		Vec2 operator*(const float&f);
 		Vec2 operator==(const Vec2& _r);
 		Vec2 operator!=(const Vec2& _r);
 	};
